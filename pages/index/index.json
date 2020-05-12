@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "backgroundColor": "pink",
+  "enablePullDownRefresh": true
+
 }
