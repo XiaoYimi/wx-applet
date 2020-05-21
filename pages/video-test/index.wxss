@@ -1,0 +1,20 @@
+/* pages/video-test/index.wxss */
+
+.types {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 10rpx 0;
+}
+
+.types-item {
+  box-sizing: border-box;
+  margin: 1.6666666%;
+  border: 1rpx solid pink;
+  padding: 5rpx 0;
+  width: 30%;
+  text-align: center;
+}

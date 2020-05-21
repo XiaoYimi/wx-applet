@@ -10,6 +10,12 @@ Page({
     
   },
 
+  toVideo () {
+    wx.navigateTo({
+      url: '../../pages/video-test/index',
+    })
+  },
+
   toIcon () {
     wx.navigateTo({
       url: '../../pages/icon/index'
@@ -48,7 +54,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad (options) {
+  async onLoad (options) {
     console.log('page-onLoad')
   },
 

@@ -1,0 +1,24 @@
+<!--pages/video-test/index.wxml-->
+<view>
+  <view bindtap="clearGloablData">clearGloablData</view>
+  <view class="title">视频分类</view>
+  <view class="types">
+    <block wx:for="{{types}}" wx:key="index">
+      <view
+        data-id="{{ item.id }}"
+        data-selectedID="{{ current }}"
+        class="types-item"
+        bindtap="toVideoType">{{ item.title }}</view>
+    </block>
+  </view>
+
+  <view class="title">分类热门推荐</view>
+  <view class="types">
+    <block wx:for="{{types[current].list}}" wx:key="index">
+        <view
+          data-vid="{{ item.vid }}"
+          class="types-album">{{ item.title }}</view>
+    </block>  
+  </view>
+
+</view>

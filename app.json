@@ -5,7 +5,8 @@
     "pages/comp/swiper/index",
     "pages/comp/scroll-view/index",
     "pages/comp/rich-text/index",
-    "pages/comp/picker/index"
+    "pages/comp/picker/index",
+    "pages/video-test/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",

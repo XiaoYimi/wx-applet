@@ -6,4 +6,5 @@
   <view bindtap="toScrollView">to ScrollView page</view>
   <view bindtap="toRichText">to RichText page</view>
   <view bindtap="toPicker">to Picker page</view>
+  <view bindtap="toVideo">to Video page</view>
 </view>
