@@ -1,0 +1,9 @@
+/* pages/comp/swiper/index.wxss */
+
+.swiper-item-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: inherit;
+}

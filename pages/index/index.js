@@ -1,3 +1,6 @@
+const app = getApp()
+const Sign = require('../../utils/Sign.js')
+const sign = new Sign()
 Page({
 
   /**
@@ -13,14 +16,40 @@ Page({
     })
   },
 
+  toSwiper () {
+    wx.navigateTo({
+      url: '../../pages/comp/swiper/index',
+    })
+  },
+
+  toScrollView () {
+    wx.navigateTo({
+      url: '../../pages/comp/scroll-view/index',
+    })
+  },
+
+  toRichText () {
+    wx.navigateTo({
+      url: '../../pages/comp/rich-text/index',
+    })
+  },
+
+  toPicker () {
+    wx.navigateTo({
+      url: '../../pages/comp/picker/index',
+    })
+  },
+
+  async getUserInfo (res) {
+    const data = await sign.getCode()
+    console.log(data)
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad (options) {
     console.log('page-onLoad')
-    wx.login({
-      success: res => console.log(res)
-    })
   },
 
   /**

@@ -1,0 +1,42 @@
+/* pages/comp/scroll-view/index.wxss */
+.scroll-view-x {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: pink;
+}
+
+.scroll-view-x .menus-item {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12rpx;
+}
+
+.scroll-view-y {
+  margin-top: 50rpx;
+  background-color: pink;
+}
+
+.scroll-view-y .menus-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: inherit;
+}
+
+.btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5rpx;
+  padding: 0 4rpx;
+}

@@ -1,0 +1,19 @@
+<!--pages/comp/swiper/index.wxml-->
+<view class="session-swiper">
+  <swiper class="swiper"
+    indicator-dots
+    autoplay
+    circular
+    current="0"
+    bindchange="swiperChange"
+    indicator-color="rgba(0, 0, 0, .3)"
+    indicator-active-color="rgba(255, 255, 255, .7)">
+    <block wx:for="{{swiperData}}" wx:key="this">
+      <swiper-item>
+        <view class="swiper-item-block" style="background-color:{{ item.bg }}">
+          {{ item.content }}
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

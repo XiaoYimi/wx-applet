@@ -1,0 +1,28 @@
+<!--pages/comp/picker/index.wxml-->
+<view class="session">
+  <picker mode="date" value="{{ date }}" bindchange="dateChange">data selector</picker>
+</view>
+
+<view class="session">
+  <picker mode="time" value="{{ time }}" bindchange="timeChange">time selector</picker>
+</view>
+
+<view class="session">
+  <picker mode="region" value="{{ region }}" bindchange="regionChange">region selector</picker>
+</view>
+
+<view class="session">
+  <picker mode="selector" range="{{ list }}" range-key="name"  value="{{ select }}" bindchange="selectChange">select selector</picker>
+</view>
+
+-----------------------------------------
+
+<view class="session">
+  <picker mode="multiSelector"
+    range="{{ multiList }}"
+    range-key="name"
+    value="{{ multiIndex }}"
+    bindchange="multiChange"
+    bindcolumnchange="multiColumnChange"
+  >multi selector</picker>
+</view>

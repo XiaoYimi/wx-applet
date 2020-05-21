@@ -1,0 +1,40 @@
+<!--pages/comp/scroll-view/index.wxml-->
+<scroll-view
+  scroll-x
+  enable-flex
+  bindscroll="scrollView"
+  bindscrolltoupper="scrollUpper"
+  bindscrolltolower="scrollLower"
+  scroll-into-view="{{ toView }}"
+  class="scroll-view-x"
+  style="height: 60rpx;">
+  <block wx:for="{{ menus }}" wx:key="this">
+    <view id="menus{{index}}" class="menus-item">MENUS {{ index }}</view>
+  </block>
+</scroll-view>
+
+
+<scroll-view
+  scroll-y
+  scroll-with-animation
+  bindscroll="scrollView"
+  bindscrolltoupper="scrollUpper"
+  bindscrolltolower="scrollLower"
+  scroll-into-view="{{ toView }}"
+  class="scroll-view-y"
+  style="height: 300rpx;">
+  <block wx:for="{{ menus }}" wx:key="this">
+    <view id="menus{{index}}" class="menus-item">MENUS {{ index }}</view>
+  </block>
+</scroll-view>
+
+
+<view class="btns">
+  <block wx:for="{{ menus }}" wx:key="this">
+    <view
+      id="menus{{index}}"
+      bindtap="scrollTo"
+      class="btn">menus{{ index }}</view>
+  </block>
+</view>
+
