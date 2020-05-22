@@ -14,10 +14,9 @@ Page({
     current: 0, // 视频分类列表选中的索引值
   },
 
-  // 请求获取分类热门视频列表
+  // 请求获取视频分类的热门视频列表
   async toVideoType (e) {
-    const id = e.target.dataset.id
-    console.log(id)
+    const id = e ? e.target.dataset.id : videoConfig.defaultID // 初始化 6 (旅行)
     const typesObj = app.globalData.videos.types
     for (let i = 0; i < typesObj.length; i++) {
       if (typesObj[i].id === id && typesObj[i].list.length > 0) {
@@ -37,8 +36,11 @@ Page({
   },
 
   // 跳转至详情页播放
-  toVideoDesc () {
-
+  toVideoDesc (e) {
+    const args = e.target.dataset.args ? e.target.dataset.args : e.currentTarget.dataset.args
+    wx.navigateTo({
+      url: '../../pages/video-desc/index?tid=' + args.tid + '&vid=' + args.vid
+    })
   },
 
   clearGloablData () {
@@ -46,7 +48,7 @@ Page({
   },
 
   // 获取选择的视频分类列表的索引, 配合 使用
-  getCurrentIndex (id = 0) {
+  getCurrentIndex(id = videoConfig.defaultID) {
     const typesList = app.globalData.videos.types
     let index = 0
     for (let i=0; i<typesList.length; i++) {
@@ -78,7 +80,7 @@ Page({
   },
 
   // 请求视频分类下的热门视频列表
-  async getVideoTypesHotList (id = 6) {
+  async getVideoTypesHotList(id = videoConfig.defaultID) {
     const list = []
     const { result } = await http.query({
       url: videoConfig.root + '/videoCategoryDetails',
@@ -89,6 +91,7 @@ Page({
       const vid = result[i].id
       const { date, releaseTime, description, title, playUrl, cover, category } = result[i].data.content.data
       const item = {
+        tid: id,
         vid: vid, date: date,
         releaseTime: releaseTime, 
         description: description, 
@@ -107,7 +110,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   async onLoad(options) {
-    const timestamp = +new Date()
     console.log('page-onLoad')
 
     // 检测是否请求获取视频分类列表
@@ -123,6 +125,7 @@ Page({
         types: result,
         timestamp: +new Date() + 3600000 * 6, // 有效期 6 小时
       }
+      this.toVideoType()
     } else if (app.globalData.videos.timestamp < timestamp) {
       // 发送请求-获取视频分类列表
       const result = await this.getVideoTypes()
@@ -130,6 +133,7 @@ Page({
         types: result,
         timestamp: +new Date() + 3600000 * 6, // 有效期 6 小时
       }
+      this.toVideoType()
     }
 
     this.setData({

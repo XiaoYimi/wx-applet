@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/video-test/index",
     "pages/index/index",
     "pages/icon/index",
     "pages/comp/swiper/index",
     "pages/comp/scroll-view/index",
     "pages/comp/rich-text/index",
     "pages/comp/picker/index",
-    "pages/video-test/index"
+    "pages/video-desc/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",

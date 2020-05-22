@@ -1,0 +1,25 @@
+<!--pages/video-desc/index.wxml-->
+<view>
+  <view class="video">
+    <image
+      src="{{video.cover.detail}}"
+      alt="{{video.title}}"
+      class="video-img"></image>
+    <view class="video-detail">
+      <view class="detail-title">{{video.title}}</view>
+      <view class="detail-type">类型: {{video.category}}</view>
+      <view class="detail-date">日期: {{video.date}}</view>
+    </view>
+  </view>
+  <view class="desc">{{video.description}}</view>
+
+  <view class="video-block">
+    <video
+      id="cvideo" 
+      src="{{video.playUrl}}"
+      binderror="videoError"
+      class="video-instance"
+    ></video>
+    <view class="video-tip">{{videoTip}}</view>
+  </view>
+</view>

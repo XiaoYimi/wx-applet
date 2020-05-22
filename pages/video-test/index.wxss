@@ -18,3 +18,20 @@
   width: 30%;
   text-align: center;
 }
+
+.types-album {
+  box-sizing: border-box;
+  margin: 2.5%;
+  width: 45%;
+}
+
+.types-album-img { width: 100%; }
+
+.types-album-title {
+  font-size: 30rpx;
+}
+
+.actived {
+  color: #ffffff;
+  background-color: pink;
+}

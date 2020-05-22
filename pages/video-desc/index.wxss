@@ -1,0 +1,47 @@
+/* pages/video-desc/index.wxss */
+.video {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.video-img {
+  margin: 2.5%;
+  width: 45%;
+}
+
+.video-detail {
+  margin: 2.5%;
+  width: 45%;
+}
+
+.detail-title {
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.detail-type, .detail-date {
+  margin-bottom: 10rpx;
+  font-size: 30rpx;
+}
+
+.desc {
+  padding: 30rpx 20rpx;
+  font-size: 30rpx;
+}
+
+.btn-group {  
+  margin: 20rpx 0;
+  padding: 0 20rpx;
+}
+
+.btn {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  font-size: 32rpx;
+}
+
+.video-instance { width: 100%; }
+
+.video-tip { margin: 20rpx 0; }

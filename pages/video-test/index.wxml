@@ -6,8 +6,7 @@
     <block wx:for="{{types}}" wx:key="index">
       <view
         data-id="{{ item.id }}"
-        data-selectedID="{{ current }}"
-        class="types-item"
+        class="{{ current === index ? 'types-item actived' : 'types-item' }}"
         bindtap="toVideoType">{{ item.title }}</view>
     </block>
   </view>
@@ -17,7 +16,12 @@
     <block wx:for="{{types[current].list}}" wx:key="index">
         <view
           data-vid="{{ item.vid }}"
-          class="types-album">{{ item.title }}</view>
+          data-args="{{item}}"
+          bindtap="toVideoDesc"
+          class="types-album">
+          <image src="{{item.cover.detail}}" alt="{{item.category}}" class="types-album-img" />
+          <view class="types-album-title">{{item.title}}</view>
+        </view>
     </block>  
   </view>
 
